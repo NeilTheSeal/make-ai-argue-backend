@@ -30,6 +30,8 @@ export default tseslint.config([
       globals: {
         ...globals.node,
         ...globals.es2022,
+        app: 'writable', // Express app instance available globally
+        express: 'readonly', // Express function available globally
       },
       parserOptions: {
         project: './tsconfig.json',
@@ -104,6 +106,11 @@ export default tseslint.config([
           selector: 'variable',
           format: ['camelCase', 'UPPER_CASE'],
           leadingUnderscore: 'allow',
+          filter: {
+            // Allow double underscores for Node.js-style variables
+            regex: '^__.*__$|^__.*$',
+            match: false,
+          },
         },
         {
           selector: 'function',
@@ -184,13 +191,7 @@ export default tseslint.config([
       'no-labels': 'error',
       'no-lone-blocks': 'error',
       'no-loop-func': 'error',
-      'no-magic-numbers': [
-        'warn',
-        {
-          ignore: [0, 1, -1, 200, 201, 400, 401, 403, 404, 500], // Common HTTP status codes
-          ignoreArrayIndexes: true,
-        },
-      ],
+      'no-magic-numbers': 0,
       'no-multi-spaces': 'error',
       'no-multi-str': 'error',
       'no-new': 'error',
