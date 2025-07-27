@@ -22,7 +22,8 @@ const continuePrompt = (
     ${history}
     What is your response to the last statement by ${model2}?
     Make sure to consider the context of the conversation and provide a
-    thoughtful continuation.
+    thoughtful continuation. Keep your response under 40 words. Write your
+    response using only words, no special characters or formatting.
   `
 }
 
