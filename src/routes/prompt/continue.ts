@@ -1,5 +1,6 @@
 import continuePrompt from '../../prompts/continue'
 import requestOpenAI from '../../requests/openai'
+import requestAnthropic from '../../requests/claude'
 
 app.post('/prompt/continue', async (req, res) => {
   const { conversationHistory, prompt, model1, model2 } = req.body
@@ -17,6 +18,10 @@ app.post('/prompt/continue', async (req, res) => {
 
     if (model2 === 'openai') {
       aiResponse = await requestOpenAI(intro)
+    }
+
+    if (model2 === 'claude') {
+      aiResponse = await requestAnthropic(intro)
     }
 
     if (!aiResponse) {

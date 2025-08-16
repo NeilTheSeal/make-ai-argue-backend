@@ -1,5 +1,6 @@
 import introPrompt from '../../prompts/intro'
 import requestOpenAI from '../../requests/openai'
+import requestAnthropic from '../../requests/claude'
 
 app.post('/prompt/intro', async (req, res) => {
   const { prompt, model } = req.body
@@ -15,6 +16,10 @@ app.post('/prompt/intro', async (req, res) => {
 
     if (model === 'openai') {
       aiResponse = await requestOpenAI(intro)
+    }
+
+    if (model === 'claude') {
+      aiResponse = await requestAnthropic(intro)
     }
 
     if (!aiResponse) {
