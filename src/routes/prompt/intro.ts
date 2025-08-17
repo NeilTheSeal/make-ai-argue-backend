@@ -1,6 +1,6 @@
-import introPrompt from '../../prompts/intro'
-import requestOpenAI from '../../requests/openai'
-import requestAnthropic from '../../requests/claude'
+import introPrompt from '../../prompts/intro.ts'
+import requestOpenAI from '../../requests/openai.ts'
+import requestAnthropic from '../../requests/claude.ts'
 
 app.post('/prompt/intro', async (req, res) => {
   const { prompt, model } = req.body

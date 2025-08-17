@@ -2,11 +2,14 @@
   "name": "make-ai-argue-backend",
   "version": "0.0.1",
   "type": "module",
+  "engines": {
+    "node": "23.x"
+  },
   "description": "The express.js typescript application serving the API for Make AI Argue",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "tsc --moduleResolution bundler",
     "start": "node dist/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

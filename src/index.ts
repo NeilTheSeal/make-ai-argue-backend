@@ -1,6 +1,6 @@
-import './config/init'
-import loadRoutes from './config/loadRoutes'
-import loadMiddleware from './middleware/loadMiddleware'
+import './config/init.ts'
+import loadRoutes from './config/loadRoutes.ts'
+import loadMiddleware from './middleware/loadMiddleware.ts'
 
 await loadMiddleware()
 await loadRoutes()

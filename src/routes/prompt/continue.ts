@@ -1,6 +1,6 @@
-import continuePrompt from '../../prompts/continue'
-import requestOpenAI from '../../requests/openai'
-import requestAnthropic from '../../requests/claude'
+import continuePrompt from '../../prompts/continue.ts'
+import requestOpenAI from '../../requests/openai.ts'
+import requestAnthropic from '../../requests/claude.ts'
 
 app.post('/prompt/continue', async (req, res) => {
   const { conversationHistory, prompt, model1, model2 } = req.body
