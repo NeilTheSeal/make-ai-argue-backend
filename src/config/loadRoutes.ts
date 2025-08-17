@@ -53,7 +53,7 @@ async function findRouteFiles(
 function getImportPath(filePath: string): string {
   const relativePath = relative(__dirname, filePath)
   // Remove file extension and normalize path separators
-  const importPath = relativePath.replace(/\.[jt]s$/, '').replace(/\\/g, '/')
+  const importPath = relativePath.replace(/\\/g, '/')
   // Ensure the path starts with './' for relative imports
   return importPath.startsWith('.') ? importPath : `./${importPath}`
 }
