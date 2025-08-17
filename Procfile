@@ -1,1 +1,1 @@
-web: npm install typescript -g && npm run build && npm run start
+web: npm install typescript -g && npm ci && npm run build && npm run start
