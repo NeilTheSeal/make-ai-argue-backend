@@ -6,12 +6,11 @@ const openai = new OpenAI({
   project: process.env.OPENAI_PROJECT,
 })
 
-async function requestOpenAI(prompt: string): Promise<string> {
+async function requestOpenAI(prompt: string, model: string): Promise<string> {
   const completion = await openai.chat.completions.create({
-    model: 'gpt-4o-mini',
+    model: model,
     messages: [{ role: 'user', content: prompt }],
-    max_tokens: 500, // Reasonable limit for opening arguments
-    temperature: 0.8, // Some creativity for interesting debates
+    temperature: 1.0, // More creativity for interesting debates
   })
 
   const aiResponse = completion.choices[0]?.message?.content ?? ''

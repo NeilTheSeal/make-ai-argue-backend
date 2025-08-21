@@ -1,6 +1,7 @@
 import introPrompt from '../../prompts/intro.ts'
 import requestOpenAI from '../../requests/openai.ts'
 import requestAnthropic from '../../requests/claude.ts'
+import requestGemini from '../../requests/gemini.ts'
 
 app.post('/prompt/intro', async (req, res) => {
   const { prompt, model } = req.body
@@ -14,12 +15,16 @@ app.post('/prompt/intro', async (req, res) => {
 
     let aiResponse: string | null = null
 
-    if (model === 'openai') {
-      aiResponse = await requestOpenAI(intro)
+    if (model === 'gpt-4o-mini' || model === 'gpt-5-mini') {
+      aiResponse = await requestOpenAI(intro, model)
     }
 
     if (model === 'claude') {
       aiResponse = await requestAnthropic(intro)
+    }
+
+    if (model === 'gemini') {
+      aiResponse = await requestGemini(intro)
     }
 
     if (!aiResponse) {
@@ -32,7 +37,6 @@ app.post('/prompt/intro', async (req, res) => {
       message: aiResponse,
     })
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error('Error:', error)
     return res.status(500).json({
       error: 'Failed to generate AI response',

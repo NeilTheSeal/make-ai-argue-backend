@@ -124,7 +124,7 @@ export default tseslint.config([
       ],
 
       // General JavaScript/TypeScript rules
-      'no-console': 'warn', // Allow console in backend but warn
+      'no-console': 'off', // Allow console in backend
       'no-debugger': 'error',
       'no-alert': 'error', // Not relevant for Node.js but good to have
       'no-var': 'error',
@@ -170,7 +170,7 @@ export default tseslint.config([
       'accessor-pairs': 'error',
       'array-callback-return': 'error',
       'block-scoped-var': 'error',
-      complexity: ['warn', 10],
+      complexity: ['warn', 20],
       'consistent-return': 'error',
       'default-case': 'error',
       'guard-for-in': 'error',
