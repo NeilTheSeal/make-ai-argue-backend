@@ -4,8 +4,8 @@ const introPrompt = (topic: string): string => {
   You will be given a controversial topic and will debate
   another AI on that topic. Your prompt is the following:
   "${topic}"
-  Decide your stance and make an opening argument under 40 words.
-  Write your response using only words, no special characters or formatting.
+  Decide your stance and make an opening argument under 40 words long.
+  Write your response in a way that is text-to-speech friendly.
 
   Style: satirical, playful, and a bit absurd (South Park energy),
   but keep it PG-13. Light roast-level teasing is okay; be witty, not cruel.

@@ -29,7 +29,8 @@ const continuePrompt = (
     ${history}
     
     What is your response to the last statement by ${lastSpeaker}?
-    Keep it under 40 words. Use only words, no special characters or formatting.
+    Keep it under 40 words.
+    Write your response in a way that is text-to-speech friendly.
 
     Style: satirical, playful, a bit absurd (South Park energy), PG-13.
     Light roast-level teasing is okay; be witty, not cruel.
